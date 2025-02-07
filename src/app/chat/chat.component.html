@@ -9,6 +9,11 @@
     </div>
 
     <div class="col-md-8 mt-3">
+      <div class="row" *ngIf="!hasChatHistory">
+        <div class="col-sm-12">
+          <span>no messages</span>
+        </div>
+      </div>
       <div class="row" *ngIf="hasChatHistory">
         <div class="col-sm-12">
           <ng-container *ngFor="let message of messages; let i = index;">
