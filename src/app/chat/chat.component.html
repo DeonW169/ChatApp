@@ -9,16 +9,31 @@
     </div>
 
     <div class="col-md-8 mt-3">
-      <div class="input-group">
-        <input type="text" class="form-control" [(ngModel)]="chatMessage" />
-        <button
-          class="btn btn-secondary ml-2"
-          type="submit"
-          (click)="sendMessage()"
-        >
-          Send
-        </button>
+      <div class="row" *ngIf="hasChatHistory">
+        <div class="col-sm-12">
+          <ng-container *ngFor="let message of messages; let i = index;">
+            <div class="row">
+              <div class="col-sm-6">{{message.date | date}}</div>
+              <div class="col-sm-6">{{message.message}}</div>
+            </div>
+          </ng-container>
+        </div>
       </div>
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="input-group">
+            <input type="text" class="form-control" [(ngModel)]="chatMessage" />
+            <button
+              class="btn btn-secondary ml-2"
+              type="submit"
+              (click)="sendMessage()"
+            >
+              Send
+            </button>
+          </div>
+        </div>
+      </div>
+      
     </div>
   </div>
 
