@@ -27,6 +27,9 @@ import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import listPlugin from '@fullcalendar/list';
 import interactionPlugin from '@fullcalendar/interaction';
+import { HomeComponent } from './home/home.component';
+import { UsernameComponent } from './username/username.component';
+import { ChatComponent } from './chat/chat.component';
 
 FullCalendarModule.registerPlugins([
   dayGridPlugin,
@@ -38,6 +41,9 @@ FullCalendarModule.registerPlugins([
 @NgModule({
   declarations: [
     AppComponent,
+    HomeComponent,
+    UsernameComponent,
+    ChatComponent,
   ],
   imports: [
     BrowserModule,

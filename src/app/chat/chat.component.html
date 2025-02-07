@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 mt-3" *ngIf="hasUsers">
+      <div *ngFor="let user of users">
+        <span (click)="setSelectedUser(user)"
+          >{{ user.name }} {{ user.surname }}</span
+        >
+      </div>
+    </div>
+
+    <div class="col-md-8 mt-3">
+      <div class="input-group">
+        <input type="text" class="form-control" [(ngModel)]="chatMessage" />
+        <button
+          class="btn btn-secondary ml-2"
+          type="submit"
+          (click)="sendMessage()"
+        >
+          Send
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- <div class="container">
+  <div class="col-sm-12">
+    <div class="row" *ngFor="let user of users">
+      <p>{{ user.name }} {{ user.surname }}</p>
+    </div>
+  </div>
+</div> -->
+</div>

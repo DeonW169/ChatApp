@@ -1,0 +1,45 @@
+.card {
+    border-radius: 2%;
+    width: 500px;
+    height: 720px;
+    border-color: black;
+    border-width: 0px;
+}
+
+.form-control {
+    width: 300px;
+}
+
+button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 23px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    background-color: rgb(135, 165, 182);
+    border: 2px solid black;
+    border-radius: 10px;
+    box-shadow: 5px 5px 0px black;
+    transition: all 0.3sec ease;
+}
+button:hover {
+    background-color: rgb(195, 214, 218);
+    color: rgb(56, 52, 52);
+    border: 2px solid black;
+    box-shadow: 5px 5px 0px black;
+}
+button:active {
+    background-color: rgb(255, 255, 255);
+    box-shadow: none;
+    transform: translateY();
+}
+
+// input.ng-invalid.ng-touched {
+//     border: 2px solid red;
+// }
+
+label {
+    font-weight: 500;
+}

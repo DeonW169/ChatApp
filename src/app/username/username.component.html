@@ -1,0 +1,66 @@
+<div class="container mt-4">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card text-center">
+        <img
+          class="card-image-top"
+          src="https://cdn.pixabay.com/photo/2016/01/30/22/04/typewriter-1170657_1280.jpg"
+          alt="Typing img"
+        />
+        <div class="card-body">
+          <h4>Please enter your Name and Surname to continue.</h4>
+          <div class="container mt-1">
+            <div class="row justify-content-center">
+              <form [formGroup]="usernameForm">
+                <div class="mb-1">
+                  <label for="name" class="form-label">Name</label>
+                  <input
+                    type="text"
+                    class="form-control form-control-md"
+                    formControlName="name"
+                    id="name"
+                  />
+                  <span
+                    class="error"
+                    *ngIf="
+                      !usernameForm.get('name').valid &&
+                      usernameForm.get('name').touched
+                    "
+                    >Name is required!</span
+                  >
+                </div>
+                <div class="mb-1">
+                  <label for="surname" class="justify-content-start form-label"
+                    >Surname</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control form-control-md"
+                    id="surname"
+                    formControlName="surname"
+                  />
+                  <span
+                    class="error"
+                    *ngIf="
+                      !usernameForm.get('surname').valid &&
+                      usernameForm.get('surname').touched
+                    "
+                    >Surname is required!</span
+                  >
+                </div>
+                <button
+                  type="submit"
+                  class="btn btn-lg mt-4"
+                  (click)="onContinue()"
+                >
+                  Continue
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<router-outlet></router-outlet>
