@@ -1,15 +1,34 @@
-<div class="container">
+<div class="container chat-container">
   <div class="row">
     <div class="col-md-4 mt-3" *ngIf="hasUsers">
-      <div *ngFor="let user of users">
-        <span (click)="setSelectedUser(user)"
+      <div class="name-border" *ngFor="let user of users">
+        <span class="user-name" (click)="setSelectedUser(user)"
           >{{ user.name }} {{ user.surname }}</span
         >
       </div>
     </div>
 
+    <div class="col-md-8 mt-3 chat-content">
+      <div class="row" *ngIf="!hasChatHistory">
+        <div class="col-sm-12 mt-3">
+          <span class="no-message">no messages</span>
+        </div>
+      </div>
+      <div class="row" *ngIf="hasChatHistory">
+        <div class="col-sm-10">
+          <ng-container *ngFor="let message of messages; let i = index">
+            <div class="row">
+              <div class="col-sm-8">
+                {{ message.date | date }}
+              </div>
+              <div class="col-sm-12 message-border">{{ message.message }}</div>
+            </div>
+          </ng-container>
+        </div>
+      </div>
+    </div>
     <div class="col-md-8 mt-3">
-      <div class="input-group">
+      <div class="input-group fixed-bottom small-input-group">
         <input type="text" class="form-control" [(ngModel)]="chatMessage" />
         <button
           class="btn btn-secondary ml-2"

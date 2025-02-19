@@ -36,9 +36,9 @@ button:active {
     transform: translateY();
 }
 
-// input.ng-invalid.ng-touched {
-//     border: 2px solid red;
-// }
+input.ng-invalid.ng-touched {
+    border: 2px solid red;
+}
 
 label {
     font-weight: 500;
